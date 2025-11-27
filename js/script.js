@@ -174,3 +174,7 @@ document.getElementById("cep").addEventListener("blur", function () {
         });
 });
 
+
+function whatsappApi () {
+    console.log('a');
+}

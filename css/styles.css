@@ -709,11 +709,12 @@ footer {
     font-size: 36px;
     cursor: pointer;
     color: var(--second-collor);
-    transition: .3s;
+    transition: transform .2s ease, color .2s ease;
 }
 
 .close-client:hover {
     color: #C8A57A;
+    transform: scale(1.2); /* aumenta 20% no hover */
 }
 
 .client-modal-content {
