@@ -145,6 +145,46 @@ checkoutModal.addEventListener("click", (e) => {
     }
 });
 
+// Menu Hamburger
+const menuToggle = document.querySelector('.menu-toggle');
+const navbar = document.querySelector('.navbar');
+const menuOverlay = document.querySelector('.menu-overlay');
+const navLinks = document.querySelectorAll('.navbar a');
+
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navbar.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+});
+
+// Fechar menu ao clicar em um link
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navbar.classList.remove('active');
+        menuOverlay.classList.remove('active');
+    });
+});
+
+// Fechar menu ao clicar no overlay
+menuOverlay.addEventListener('click', () => {
+    menuToggle.classList.remove('active');
+    navbar.classList.remove('active');
+    menuOverlay.classList.remove('active');
+});
+
+// Header que esconde ao rolar (para Opção 2)
+let lastScrollY = window.scrollY;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        header.classList.add('hidden');
+    } else {
+        header.classList.remove('hidden');
+    }
+    lastScrollY = window.scrollY;
+});
 
 
 document.getElementById("cep").addEventListener("input", function () {
