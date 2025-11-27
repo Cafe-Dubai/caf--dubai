@@ -180,55 +180,49 @@ checkoutModal.addEventListener("click", (e) => {
 });
 
 
-// ===============================
-// MENU HAMBÚRGUER MOBILE
-// ===============================
-const menuToggle = document.querySelector(".menu-toggle");
-const navbar = document.querySelector(".navbar");
-const menuOverlay = document.querySelector(".menu-overlay");
-const navLinks = document.querySelectorAll(".navbar a");
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navbar = document.querySelector(".navbar");
+    const menuOverlay = document.querySelector(".menu-overlay");
+    const navLinks = document.querySelectorAll(".navbar a");
 
-// Abre/fecha menu mobile
-menuToggle.addEventListener("click", () => {
-  menuToggle.classList.toggle("active");
-  navbar.classList.toggle("active");
-  menuOverlay.classList.toggle("active");
+    // Verifica se estamos no mobile antes de adicionar eventos
+    if (window.innerWidth <= 768) {
+        if (menuToggle && navbar && menuOverlay) {
+            // Abre/fecha menu
+            menuToggle.addEventListener("click", () => {
+                menuToggle.classList.toggle("active");
+                navbar.classList.toggle("active");
+                menuOverlay.classList.toggle("active");
+            });
+
+            // Fecha menu ao clicar em link
+            navLinks.forEach(link => {
+                link.addEventListener("click", () => {
+                    menuToggle.classList.remove("active");
+                    navbar.classList.remove("active");
+                    menuOverlay.classList.remove("active");
+                });
+            });
+
+            // Fecha menu ao clicar no overlay
+            menuOverlay.addEventListener("click", () => {
+                menuToggle.classList.remove("active");
+                navbar.classList.remove("active");
+                menuOverlay.classList.remove("active");
+            });
+
+            // Fecha menu ao apertar ESC
+            document.addEventListener("keydown", e => {
+                if (e.key === "Escape") {
+                    menuToggle.classList.remove("active");
+                    navbar.classList.remove("active");
+                    menuOverlay.classList.remove("active");
+                }
+            });
+        }
+    }
 });
-
-// Fecha menu ao clicar em link
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    menuToggle.classList.remove("active");
-    navbar.classList.remove("active");
-    menuOverlay.classList.remove("active");
-  });
-});
-
-// Fecha menu ao clicar no fundo
-if (menuOverlay) {
-  menuOverlay.addEventListener("click", () => {
-    menuToggle?.classList.remove("active");
-    navbar?.classList.remove("active");
-    menuOverlay.classList.remove("active");
-  });
-}
-
-
-// ===============================
-// HEADER QUE ESCONDE AO ROLAR
-// ===============================
-let lastScrollY = window.scrollY;
-const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > lastScrollY && window.scrollY > 100) {
-    header.classList.add("hidden"); // Esconde
-  } else {
-    header.classList.remove("hidden"); // Mostra
-  }
-  lastScrollY = window.scrollY;
-});
-
 
 // ===============================
 // MÁSCARA + AUTOPREENCHIMENTO VIA CEP
