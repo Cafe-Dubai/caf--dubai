@@ -122,23 +122,23 @@ function updateCheckoutButton() {
 }
 
 
-// MODAL DO CHECKOUT
+
 const checkoutModal = document.getElementById("checkoutModal");
 const closeClient = document.querySelector(".close-client");
 
-// Abrir modal ao clicar em finalizar compra
+
 checkoutBtn.addEventListener("click", () => {
     if (!checkoutBtn.classList.contains("disabled")) {
         checkoutModal.classList.add("active");
     }
 });
 
-// Fechar modal
+
 closeClient.addEventListener("click", () => {
     checkoutModal.classList.remove("active");
 });
 
-// Fechar modal clicando fora
+
 checkoutModal.addEventListener("click", (e) => {
     if (e.target === checkoutModal) {
         checkoutModal.classList.remove("active");
@@ -185,3 +185,36 @@ window.addEventListener('scroll', () => {
     }
     lastScrollY = window.scrollY;
 });
+
+
+document.getElementById("cep").addEventListener("input", function () {
+    let cep = this.value.replace(/\D/g, "");
+    if (cep.length > 5) {
+        this.value = cep.replace(/(\d{5})(\d{1,3})/, "$1-$2");
+    } else {
+        this.value = cep;
+    }
+});
+
+
+document.getElementById("cep").addEventListener("blur", function () {
+    let cep = this.value.replace(/\D/g, "");
+
+    if (cep.length !== 8) return;
+
+    fetch(`https://viacep.com.br/ws/${cep}/json/`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.erro) return;
+
+            document.getElementById("endereco").value = data.logradouro || "";
+            document.getElementById("bairro").value = data.bairro || "";
+            document.getElementById("cidade").value = data.localidade || "";
+            document.getElementById("estado").value = data.uf || "";
+        });
+});
+
+
+function whatsappApi () {
+    console.log('a');
+}

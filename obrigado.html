@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet'
+        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css'>
+    <link rel="icon" href="./img/logo-com-fundo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Noto+Serif+KR:wght@200..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+        rel="stylesheet">
+    <title>Café Dubai</title>
+
+    <style>
+        :root {
+            --main-collor: #FBE6D1;
+            --second-collor: #402514;
+        }
+
+        body {
+            background-color: var(--main-collor);
+        }
+
+        .obrigado {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: var(--main-collor);
+        }
+
+        .obrigado-content {
+            background: var(--main-collor);
+            max-width: 850px;
+            width: 100%;
+            padding: 40px 30px;
+            text-align: center;
+            border-radius: 25px;
+            border: 2px solid var(--second-collor);
+            animation: fadeUp 0.8s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .obrigado-content h3 {
+            font-size: 28px;
+            margin: 20px 0 30px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .obrigado-content p {
+            font-size: 17px;
+            margin-bottom: 14px;
+        }
+
+        .obrigado-content i {
+            font-size: 80px;
+            color: var(--second-collor);
+        }
+
+        .btn-voltar {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 32px;
+            background-color: var(--second-collor);
+            color: var(--main-collor);
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 12px;
+            text-decoration: none;
+            text-transform: uppercase;
+            border: 2px solid var(--second-collor);
+            transition: 0.3s ease;
+            animation: fadeUp 0.8s ease forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            animation-delay: 0.2s;
+        }
+
+        .btn-voltar:hover {
+            background-color: transparent;
+            color: var(--second-collor);
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        @media (max-width: 1280px) {
+
+            .obrigado-content {
+                max-width: 900px;
+                padding: 45px 35px;
+            }
+
+            .obrigado-content h3 {
+                font-size: 30px;
+            }
+
+            .obrigado-content p {
+                font-size: 18px;
+            }
+
+            .obrigado-content i {
+                font-size: 90px;
+            }
+
+            .btn-voltar {
+                padding: 14px 38px;
+                font-size: 17px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .obrigado {
+                padding: 10px;
+                min-height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .obrigado-content {
+                width: 100%;
+                max-width: 400px;
+                padding: 20px;
+                margin: 0 auto;
+                border-radius: 15px;
+                text-align: center;
+            }
+
+            .obrigado-content h3 {
+                font-size: 20px;
+                margin: 15px 0 20px;
+            }
+
+            .obrigado-content p {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
+            .obrigado-content i {
+                font-size: 55px;
+            }
+
+            .btn-voltar {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            .obrigado {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 0;
+            }
+
+            .obrigado-content {
+                width: 100%;
+                max-width: 250px;
+                padding: 10px 12px;
+                border-radius: 10px;
+                text-align: center;
+                margin: 0 auto;
+                box-sizing: border-box;
+            }
+
+            .obrigado-content h3 {
+                font-size: 15px;
+                margin: 6px 0 10px;
+            }
+
+            .obrigado-content p {
+                font-size: 11px;
+                margin-bottom: 5px;
+            }
+
+            .obrigado-content i {
+                font-size: 35px;
+            }
+
+            .btn-voltar {
+                padding: 5px 12px;
+                font-size: 11px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <section class="obrigado" id="obrigado">
+        <div class="obrigado-content">
+
+            <i class="fi fi-br-badge-check"></i>
+
+            <h3>Agradecemos por escolher o Café Dubai!</h3>
+
+            <p>Seu pedido foi recebido com sucesso e já está sendo processado.</p>
+            <p>Esperamos que cada gole traga uma experiência especial.</p>
+            <p>Conte sempre com a gente!</p>
+
+            <a href="index.html" class="btn-voltar">Voltar para o site</a>
+        </div>
+    </section>
+</body>
