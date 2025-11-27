@@ -284,8 +284,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 // ===============================
-// FUTURA FUNÇÃO PARA API DO WHATSAPP
+// FUNÇÃO PARA API DO WHATSAPP (FINALIZAR PEDIDO)
 // ===============================
 function whatsappApi() {
-  console.log("a");
+    const form = document.getElementById('clientDataForm');
+
+    // 1. Validação Manual (pois mudamos o botão para type="button")
+    if (!form.checkValidity()) {
+        form.reportValidity(); // Mostra os alertas padrão do navegador
+        return; // Para a execução se inválido
+    }
+
+    // 2. Coletar dados do Formulário
+    const nome = document.getElementById('nomeCompleto').value;
+    const cpf = document.getElementById('cpf').value;
+    const celular = document.getElementById('celular').value;
+    const cep = document.getElementById('cep').value;
+    const endereco = document.getElementById('endereco').value;
+    const numero = document.getElementById('numero').value;
+    const bairro = document.getElementById('bairro').value;
+    const cidade = document.getElementById('cidade').value;
+    const estado = document.getElementById('estado').value;
+
+    // 3. Montar a Mensagem
+    let message = "Olá! Gostaria de finalizar aqui o pedido que fiz pelo site do Café Dubai!\n\n";
+
+    message += "*Segue as informações cadastradas:*\n";
+    // Loop pelos itens do carrinho (variável global 'cart')
+    cart.forEach(item => {
+        // Ex: - Café Dubai ouro (2x) - R$ 120,00
+        message += `- ${item.name} (${item.qty}x) - R$ ${(item.price * item.qty).toFixed(2).replace('.', ',')}\n`;
+    });
+
+    message += "\n*Dados para envio:*\n";
+    message += `- Nome: ${nome}\n`;
+    message += `- CPF: ${cpf}\n`;
+    message += `- Celular: ${celular}\n`;
+    message += `- CEP: ${cep}\n`;
+    message += `- Endereço: ${endereco}, ${numero}\n`;
+    message += `- Bairro: ${bairro}\n`;
+    message += `- Cidade: ${cidade} - ${estado}\n`;
+
+    // 4. Codificar a mensagem para URL
+    const phoneNumber = "5518997346625";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    // 5. Ações Finais
+    // Abre o WhatsApp numa nova aba
+    window.open(url, '_blank');
+
+    // Redireciona a página atual para obrigado.html
+    window.location.href = "obrigado.html";
 }
