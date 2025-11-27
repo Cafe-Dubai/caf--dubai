@@ -79,45 +79,11 @@ header section {
     gap: 0.5rem;
 }
 
-/* Barra escondida */
-/* CORREÇÃO DA BARRA DE PESQUISA */
-/* RESPONSIVIDADE PARA BARRA DE PESQUISA */
-@media (max-width: 768px) {
-    .search-bar.active {
-        width: 280px;
-        right: -50px; /* Ajusta posição em mobile */
-    }
-}
-
-@media (max-width: 480px) {
-    .search-bar.active {
-        width: 220px;
-        right: -30px; /* Ajuste fino para mobile pequeno */
-    }
-    
-    /* Garante que o footer não seja cortado em mobile */
-    footer {
-        padding: 2rem 1rem;
-        margin-top: 50px;
-    }
-}
-
-/* CORREÇÃO GERAL DO BOX-SIZING */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* ADICIONE ESTA LINHA */
-    outline: none;
-    border: none;
-    text-decoration: none;
-    transition: 0.2 linear;
-    font-family: "Poppins", sans-serif;
-}
 .search-bar {
     position: absolute;
-    top: 100%; /* Coloca abaixo dos ícones */
-    right: 0;
-    transform: none; /* Remove o translateY */
+    top: 50%;
+    right: 50px;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -130,8 +96,6 @@ header section {
     width: 0;
     overflow: hidden;
     transition: 0.4s ease;
-    z-index: 101; /* Garante que fique acima de outros elementos */
-    margin-top: 0.5rem; /* Espaço dos ícones */
 }
 
 .search-bar.active {
@@ -140,14 +104,12 @@ header section {
     pointer-events: auto;
 }
 
-/* Container dos ícones precisa de position relative */
-.icons {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.search-bar input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1rem;
 }
-
 
 #closeSearch {
     border: none;
@@ -372,14 +334,13 @@ header section {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
-/* CORREÇÃO DO FOOTER */
 footer {
     background: var(--main-collor);
     padding: 3rem 2rem;
     width: 100%;
     margin-top: 100px;
     border-top: 2px solid var(--second-collor);
-    box-sizing: border-box; /* Isso resolve o problema do corte */
+    box-sizing: border-box;
 }
 
 .footer-container {
@@ -403,6 +364,7 @@ footer {
     gap: 0.5rem;
     width: 100%;
 }
+
 .footer-col h4 {
     font-size: 1.4rem;
     margin-bottom: 1.2rem;
@@ -731,18 +693,18 @@ footer {
 }
 
 .send-data {
- display: block;
-  width: 60%;              
-  max-width: 550px;        
-  margin: 35px auto 0;
-  padding: 18px 20px;    
-  font-size: 1.2rem;       
-  background: var(--second-collor);
-  color: var(--main-collor);
-  border-radius: 14px;
-  cursor: pointer;
-  transition: .3s;
-  text-align: center;
+    display: block;
+    width: 60%;
+    max-width: 550px;
+    margin: 35px auto 0;
+    padding: 18px 20px;
+    font-size: 1.2rem;
+    background: var(--second-collor);
+    color: var(--main-collor);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: .3s;
+    text-align: center;
 }
 
 .send-data:hover {
@@ -762,8 +724,10 @@ footer {
 
 .close-client:hover {
     color: #C8A57A;
-    transform: scale(1.2); /* aumenta 20% no hover */
+    transform: scale(1.2);
+    /* aumenta 20% no hover */
 }
+
 /* ===========================
    RESPONSIVIDADE GERAL
    =========================== */
@@ -901,7 +865,8 @@ footer {
     }
 
     .search-bar.active {
-        width: 220px; /*SE MEXER NISSO AQUI VAI BUGAR TUDO NÃO MEXER*/
+        width: 220px;
+        /*SE MEXER NISSO AQUI VAI BUGAR TUDO NÃO MEXER*/
     }
 
     /* BANNER */
@@ -944,12 +909,13 @@ footer {
         padding: 18px;
     }
 }
+
 @media (max-width: 480px) {
     .client-modal-content {
         width: 92%;
         padding: 18px;
     }
-}  
+}
 
 /* MOBILE — ajuste header */
 @media (max-width: 768px) {
@@ -967,19 +933,21 @@ footer {
 
     /* --- Carrinho mobile --- */
     .cart-modal {
-        right: -350px !important; 
+        right: -350px !important;
         width: 300px;
         max-width: 330px;
     }
 
     .cart-modal.active {
-        right: 0 !important; 
+        right: 0 !important;
     }
 
     #overlay {
         backdrop-filter: blur(2px);
     }
-} /* ← FECHA O BLOCO DE 768px */
+}
+
+/* ← FECHA O BLOCO DE 768px */
 /* ===========================
    MENU HAMBURGER PARA MOBILE
    =========================== */
@@ -997,7 +965,7 @@ footer {
         padding: 2rem;
         transition: 0.3s ease;
         z-index: 1000;
-        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
         justify-content: flex-start;
         gap: 2rem;
         padding-top: 80px;
@@ -1062,7 +1030,7 @@ footer {
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0,0,0,0.5);
+        background: rgba(0, 0, 0, 0.5);
         opacity: 0;
         pointer-events: none;
         transition: 0.3s;
@@ -1097,7 +1065,9 @@ footer {
     header {
         height: 70px;
     }
-}@media (max-width: 768px) and (orientation: portrait) {
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
     .header-container {
         padding: 0.7rem 1rem !important;
     }
@@ -1122,7 +1092,7 @@ footer {
     body {
         padding-top: 70px;
     }
-    
+
     header {
         height: 70px;
     }
@@ -1145,14 +1115,14 @@ footer {
         padding: 50px 4% 2rem;
     }
 }
- /*NÃO MEXER EM NADA PELA MOR DE DEUS AMÉM*/
+
+/*NÃO MEXER EM NADA PELA MOR DE DEUS AMÉM*/
 
 .client-modal-content {
     overflow-y: scroll;
-    scrollbar-width: none; 
+    scrollbar-width: none;
 }
 
 .client-modal-content::-webkit-scrollbar {
-    display: none; 
+    display: none;
 }
-
