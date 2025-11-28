@@ -771,3 +771,217 @@ footer {
 }
 
 
+
+@media (max-width: 480px) {
+
+    .header-container {
+        padding: 1rem 1.2rem;
+        justify-content: center;
+        position: relative;
+    }
+
+    .logo img {
+        width: 75px;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2001;
+    }
+
+    .icons {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        gap: 0.2rem;
+    }
+
+    .icons i {
+        font-size: 1.6rem;
+        margin-left: 0.3rem;
+    }
+
+    .search-bar {
+        top: 120%;
+        right: 0;
+        width: 0;
+        opacity: 0;
+        border-radius: 15px;
+        padding: 0.4rem;
+        transform: none;
+        transition: 0.3s ease;
+    }
+
+    .search-bar.active {
+        width: 40vw; 
+        opacity: 1;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100vh;
+        width: 70%;
+        background-color: var(--main-collor);
+        padding-top: 6rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        border-right: 2px solid var(--second-collor);
+        z-index: 2000;
+        transition: .3s ease;
+    }
+
+    .navbar.active {
+        left: 0;
+    }
+
+    .navbar a {
+        font-size: 1.3rem;
+        margin: 0;
+    }
+
+    .menu-overlay {
+        display: block;
+    }
+
+        .home-container {
+        padding: 100px 1.2rem 2rem;
+        min-height: 60vh;
+        background-position: center;
+    }
+
+    .home-container section {
+        max-width: 100%;
+    }
+
+    .content h3 {
+        font-size: 1.8rem; 
+        line-height: 1.2;
+    }
+
+    .content p {
+        font-size: 1rem;
+        margin-top: 0.8rem;
+        line-height: 1.4;
+    }
+
+
+}
+
+
+@media (max-width: 768px) {
+
+    .header-container {
+        padding: 1.2rem 2rem;
+        justify-content: center;
+        position: relative;
+    }
+
+    .logo img {
+        width: 90px;
+    }
+
+    .menu-toggle {
+        display: block;
+        left: 1.5rem;
+    }
+
+    .icons {
+        right: 1.5rem;
+    }
+
+    .icons i {
+        font-size: 1.9rem;
+    }
+
+    .search-bar {
+        top: 90%;
+        right: -23px;
+        width: 0;
+        opacity: 0;
+        padding: .5rem;
+    }
+
+    .search-bar.active {
+        width: 70vw;
+        opacity: 1;
+    }
+
+    .navbar {
+        width: 60%;
+    }
+
+    .navbar a {
+        font-size: 1.4rem;
+    }
+
+        .home-container {
+        padding: 120px 2rem 2.5rem;
+        min-height: 65vh;
+    }
+
+    .home-container section {
+        max-width: 32rem;
+    }
+
+    .content h3 {
+        font-size: 2.4rem;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+    }
+
+}
+
+
+@media (max-width: 1280px) {
+
+    .header-container {
+        padding: 1.2rem 2.5rem;
+    }
+
+    .logo img {
+        width: 95px;
+    }
+
+    .icons i {
+        font-size: 2rem;
+    }
+
+    .navbar a {
+        margin: 0 .7rem;
+        font-size: 1.05rem;
+    }
+
+    .search-bar.active {
+        width: 300px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+     .home-container {
+        padding: 150px 5% 3rem;
+        min-height: 75vh;
+    }
+
+    .home-container section {
+        max-width: 48rem;
+    }
+
+    .content h3 {
+        font-size: 3.2rem;
+    }
+
+    .content p {
+        font-size: 1.4rem;
+    }
+}
