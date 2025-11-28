@@ -771,6 +771,7 @@ footer {
 }
 
 
+/* Versão Mobile */
 
 @media (max-width: 480px) {
 
@@ -818,7 +819,7 @@ footer {
     }
 
     .search-bar.active {
-        width: 40vw; 
+        width: 40vw;
         opacity: 1;
     }
 
@@ -852,7 +853,7 @@ footer {
         display: block;
     }
 
-        .home-container {
+    .home-container {
         padding: 100px 1.2rem 2rem;
         min-height: 60vh;
         background-position: center;
@@ -863,7 +864,7 @@ footer {
     }
 
     .content h3 {
-        font-size: 1.8rem; 
+        font-size: 1.8rem;
         line-height: 1.2;
     }
 
@@ -873,8 +874,145 @@ footer {
         line-height: 1.4;
     }
 
+    .sobre {
+        width: 95%;
+        margin: 50px auto;
+        padding: 25px 12px;
+    }
 
+    .about-content {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .about-content h3 {
+        font-size: 18px;
+        margin-bottom: 22px;
+    }
+
+    .about-content img {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .about-content p {
+        font-size: 13px;
+        line-height: 1.45;
+        margin-bottom: 14px;
+    }
+
+    .menu {
+        padding: 2rem 1rem;
+    }
+    
+    .menu-container {
+        gap: 1rem;
+    }
+    
+    .menu-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+        padding: 1.2rem 1rem;
+    }
+    
+    .menu-card img {
+        width: 75px;
+    }
+    
+    .menu-card h3 {
+        font-size: 1rem;
+    }
+    
+    .menu-card p {
+        font-size: 0.85rem;
+    }
+    
+    .menu-card button {
+        font-size: 0.8rem;
+        padding: 0.7rem 1rem;
+    }
+
+    .localizacao {
+        padding: 2rem 1rem;
+        margin-top: 60px;
+    }
+
+    .localizacao-container {
+        max-width: 100%;
+    }
+
+    .localizacao h2 {
+        font-size: 1.5rem;
+    }
+
+    .localizacao p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .localizacao iframe {
+        width: 100%;
+        height: 230px;
+        border-width: 2px;
+    }
+
+    footer {
+        padding: 1.5rem 0.8rem;
+        margin-top: 60px;
+    }
+
+    .footer-container {
+        gap: 1.5rem;
+    }
+
+    .footer-col h4 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .footer-icons {
+        gap: 15px;
+    }
+
+    .footer-icons i {
+        font-size: 28px;
+    }
+
+    .icon-wrapper.mercado img {
+        width: 45px;
+    }
+
+    .icon-wrapper.shopee img {
+        width: 32px;
+    }
+
+    .contact-item {
+        gap: .4rem;
+        margin-bottom: .5rem;
+    }
+
+    .contact-item i {
+        font-size: 18px;
+    }
+
+    .contact-item p {
+        font-size: 0.85rem;
+    }
+
+    .footer-bottom {
+        margin-top: 1rem;
+        padding: 0.8rem 0;
+        gap: 0.3rem;
+    }
+
+    .footer-logo {
+        width: 50px;
+    }
 }
+
+
+
+
 
 
 @media (max-width: 768px) {
@@ -923,7 +1061,7 @@ footer {
         font-size: 1.4rem;
     }
 
-        .home-container {
+    .home-container {
         padding: 120px 2rem 2.5rem;
         min-height: 65vh;
     }
@@ -940,6 +1078,161 @@ footer {
         font-size: 1.2rem;
     }
 
+    .sobre {
+        width: 90%;
+        margin: 60px auto;
+        padding: 35px 18px;
+    }
+
+    .about-content {
+        max-width: 100%;
+        padding: 22px;
+    }
+
+    .about-content h3 {
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+
+    .about-content img {
+        max-width: 95%;
+        margin-bottom: 22px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+        line-height: 1.48;
+        margin-bottom: 15px;
+    }
+
+     .menu {
+        width: 80%;
+        padding: 2rem 1rem;
+        margin-top: 2rem;
+    }
+    
+    .menu-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .menu-card {
+        flex: 1 1 100%;
+        max-width: 300px;
+        padding: 1.5rem;
+        margin: 0 auto;
+    }
+    
+    .menu-card img {
+        width: 100%;
+        max-width: 140px;
+        height: auto;
+        margin-bottom: 1rem;
+        object-fit: contain;
+    }
+    
+    .menu-card h3 {
+        font-size: 1.25rem;
+    }
+    
+    .menu-card p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+    
+    .menu-card button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        width: 100%;
+    }
+
+
+    .localizacao {
+        width: 80%;
+        padding: 2.5rem 1.5rem;
+        margin-top: 70px;
+    }
+
+    .localizacao-container {
+        max-width: 100%;
+    }
+
+    .localizacao h2 {
+        font-size: 1.8rem;
+    }
+
+    .localizacao p {
+        font-size: 1rem;
+    }
+
+    .localizacao iframe {
+        height: 300px;
+    }
+
+    footer {
+        padding: 2.5rem 1.5rem;
+        margin-top: 90px;
+    }
+
+    .footer-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2.5rem;
+        text-align: left;
+    }
+
+    .footer-col {
+        width: auto;
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .footer-col h4 {
+        font-size: 1.3rem;
+        margin-bottom: 1.1rem;
+    }
+
+    .footer-icons {
+        justify-content: flex-start;
+        gap: 22px;
+    }
+
+    .footer-icons i {
+        font-size: 32px;
+    }
+
+    .icon-wrapper.mercado img {
+        width: 52px;
+    }
+
+    .icon-wrapper.shopee img {
+        width: 36px;
+    }
+
+    .contact-item {
+        justify-content: flex-start;
+    }
+
+    .contact-item i {
+        font-size: 21px;
+    }
+
+    .contact-item p {
+        font-size: 0.95rem;
+    }
+
+    .footer-bottom {
+        margin-top: 1.8rem;
+        padding: 1.2rem 0;
+    }
+
+    .footer-logo {
+        width: 65px;
+    }
+
+    
 }
 
 
@@ -968,7 +1261,7 @@ footer {
         pointer-events: auto;
     }
 
-     .home-container {
+    .home-container {
         padding: 150px 5% 3rem;
         min-height: 75vh;
     }
@@ -984,4 +1277,112 @@ footer {
     .content p {
         font-size: 1.4rem;
     }
+
+    .sobre {
+        padding: 25px 10px;
+    }
+
+    .about-content {
+        padding: 18px;
+        max-width: 550px;
+    }
+
+    .about-content h3 {
+        font-size: 14px;
+    }
+
+    .about-content img {
+        max-width: 300px;
+    }
+
+    .about-content p {
+        font-size: 11px;
+        line-height: 1.28;
+    }
+
+    .menu {
+        padding: 3.5rem 2rem;
+        margin-top: 5rem;
+    }
+
+    .menu-container {
+        gap: 2rem;
+    }
+
+    .menu-card {
+        flex: 1 1 calc(33.33% - 2rem);
+        max-width: 260px;
+    }
+
+    .menu-card img {
+        width: 100px;
+    }
+
+    .localizacao {
+        padding: 3rem 2rem;
+    }
+
+    .localizacao h2 {
+        font-size: 2rem;
+    }
+
+    .localizacao p {
+        font-size: 1.1rem;
+    }
+
+    .localizacao iframe {
+        height: 380px;
+    }
+
+    footer {
+        padding: 3rem 2rem;
+        margin-top: 100px;
+    }
+
+    .footer-container {
+        gap: 3rem;
+    }
+
+    .footer-col h4 {
+        font-size: 1.4rem;
+        margin-bottom: 1.2rem;
+    }
+
+    .footer-icons {
+        gap: 25px;
+    }
+
+    .footer-icons i {
+        font-size: 35px;
+    }
+
+    .icon-wrapper.mercado img {
+        width: 55px;
+    }
+
+    .icon-wrapper.shopee img {
+        width: 38px;
+    }
+
+    .contact-item {
+        gap: .6rem;
+    }
+
+    .contact-item i {
+        font-size: 22px;
+    }
+
+    .contact-item p {
+        font-size: 1rem;
+    }
+
+    .footer-bottom {
+        margin-top: 2rem;
+        padding: 1.5rem 0;
+    }
+
+    .footer-logo {
+        width: 70px;
+    }
+
 }
