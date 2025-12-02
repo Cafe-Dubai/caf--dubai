@@ -326,7 +326,7 @@ function whatsappApi() {
     message += `- Cidade: ${cidade} - ${estado}\n`;
 
     // 4. Codificar a mensagem para URL
-    const phoneNumber = "5518997346625";
+    const phoneNumber = "5514997880175";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
     // 5. Ações Finais
