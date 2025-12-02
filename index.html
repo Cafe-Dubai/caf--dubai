@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel='stylesheet'
-        href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-straight/css/uicons-bold-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/3.0.0/uicons-brands/css/uicons-brands.css'>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="icon" href="./img/logo-com-fundo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link
-        href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Noto+Serif+KR:wght@200..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Noto+Serif+KR:wght@200..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
     <title>Café Dubai</title>
 </head>
 
 <body>
+    <!-- HEADER -->
     <header>
         <div class="header-container">
-            <a href="#" class="logo">
-                <img src="./img/logo.png" alt="logo">
-            </a>
             <button class="menu-toggle" aria-label="Abrir menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
-            <div class="menu-overlay"></div>
+            
+            <a href="#" class="logo">
+                <img src="./img/logo.png" alt="logo Café Dubai">
+            </a>
+            
             <nav class="navbar">
                 <a href="#home">Home</a>
                 <a href="#sobre">Sobre</a>
@@ -40,18 +37,20 @@
 
             <div class="icons">
                 <i class="fi fi-bs-search" id="openSearch"></i>
-                <i class="fi fi-br-shopping-cart"></i>
-
-                <!-- Barra de pesquisa agora fica aqui -->
+                <i class="fi fi-br-shopping-cart" id="cartIcon"></i>
+                
+                <!-- Barra de pesquisa -->
                 <div class="search-bar" id="searchBar">
                     <input type="text" placeholder="Buscar café..." id="searchInput">
                     <button id="closeSearch">X</button>
                 </div>
             </div>
+            
+            <div class="menu-overlay"></div>
         </div>
     </header>
 
-
+    <!-- HOME -->
     <div class="home-container">
         <section id="home">
             <div class="content">
@@ -61,39 +60,25 @@
         </section>
     </div>
 
-
+    <!-- SOBRE -->
     <section class="sobre" id="sobre">
         <div class="about-content">
             <h3>Sobre Nós</h3>
             <img src="./img/Plantil Café.png" alt="Plantação de Café">
-
-            <p>O Café Dubai nasceu de uma ideia simples: transformar o café de todos os dias em uma experiência
-                especial.
-                Nossa história começou em 2024, quando lançamos a marca ainda sob o nome Café Digital. Era um projeto
-                cheio
-                de vontade, criado para unir sabor, modernidade e praticidade. Porém, como toda boa jornada, tivemos uma
-                pausa no caminho.</p>
-            <p>Mas grandes ideias não desaparecem — apenas amadurecem. E foi assim que, após esse período desligados,
-                decidimos voltar com uma nova identidade, mais forte, moderna e alinhada com o que acreditamos: nasceu o
-                Café Dubai.</p>
-            <p>Hoje, o Café Dubai é mais do que uma marca de café. É um laboratório de sabores, onde cada grão é tratado
-                com
-                cuidado e precisão para entregar aroma, equilíbrio e qualidade. Aprendemos com o passado, evoluímos
-                nossa
-                proposta e trouxemos uma nova visão: fazer cafés que despertam, inspiram e acompanham você nos melhores
-                momentos do dia.</p>
+            <p>O Café Dubai nasceu de uma ideia simples: transformar o café de todos os dias em uma experiência especial. Nossa história começou em 2024, quando lançamos a marca ainda sob o nome Café Digital. Era um projeto cheio de vontade, criado para unir sabor, modernidade e praticidade. Porém, como toda boa jornada, tivemos uma pausa no caminho.</p>
+            <p>Mas grandes ideias não desaparecem — apenas amadurecem. E foi assim que, após esse período desligados, decidimos voltar com uma nova identidade, mais forte, moderna e alinhada com o que acreditamos: nasceu o Café Dubai.</p>
+            <p>Hoje, o Café Dubai é mais do que uma marca de café. É um laboratório de sabores, onde cada grão é tratado com cuidado e precisão para entregar aroma, equilíbrio e qualidade. Aprendemos com o passado, evoluímos nossa proposta e trouxemos uma nova visão: fazer cafés que despertam, inspiram e acompanham você nos melhores momentos do dia.</p>
             <p>Voltamos diferentes. Voltamos melhores. Voltamos Café Dubai. E essa nova fase é só o começo.</p>
         </div>
     </section>
 
-
+    <!-- MENU -->
     <section class="menu" id="menu">
-
         <h2>Menu</h2>
-
         <div class="menu-container">
+            <!-- Produto 1 -->
             <div class="menu-card">
-                <img src="./img/pacote-bronze.png" alt="Café Lab bronze">
+                <img src="./img/pacote-bronze.png" alt="Café Dubai bronze">
                 <h3>Café Dubai bronze</h3>
                 <p class="price">R$ 20,00</p>
                 <div class="qty-box">
@@ -103,10 +88,10 @@
                 </div>
                 <button class="add-to-cart">Adicionar ao Carrinho</button>
             </div>
-
-
+            
+            <!-- Produto 2 -->
             <div class="menu-card">
-                <img src="./img/pacote-prata.png" alt="Café Lab prata">
+                <img src="./img/pacote-prata.png" alt="Café Dubai prata">
                 <h3>Café Dubai prata</h3>
                 <p class="price">R$ 40,00</p>
                 <div class="qty-box">
@@ -116,9 +101,10 @@
                 </div>
                 <button class="add-to-cart">Adicionar ao Carrinho</button>
             </div>
-
+            
+            <!-- Produto 3 -->
             <div class="menu-card">
-                <img src="./img/pacote-ouro.png" alt="Café Lab ouro">
+                <img src="./img/pacote-ouro.png" alt="Café Dubai ouro">
                 <h3>Café Dubai ouro</h3>
                 <p class="price">R$ 60,00</p>
                 <div class="qty-box">
@@ -131,121 +117,109 @@
         </div>
     </section>
 
-
+    <!-- LOCALIZAÇÃO -->
     <section class="localizacao" id="localizacao">
         <div class="localizacao-container">
             <h2>Nossa Localização</h2>
-
             <p>De Marília – SP para todo o Brasil, entregamos a experiência única do Café Dubai até você.</p>
-
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d334594.5157708605!2d-50.16512958224463!3d-22.09613908947399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bfd72c62b64a63%3A0xa6490d177f5adcfa!2zTWFyw61saWEsIFNQ!5e0!3m2!1spt-BR!2sbr!4v1764175439689!5m2!1spt-BR!2sbr"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d334594.5157708605!2d-50.16512958224463!3d-22.09613908947399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bfd72c62b64a63%3A0xa6490d177f5adcfa!2zTWFyw61saWEsIFNQ!5e0!3m2!1spt-BR!2sbr!4v1764175439689!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
-
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-container">
-
+            <!-- Plataformas -->
             <div class="footer-col">
                 <h4>Outras Plataformas de venda</h4>
                 <div class="footer-icons">
                     <a href="#" class="icon-wrapper mercado">
-                        <img src="./img/mercado-livre.png" class="img-default">
-                        <img src="./img/mercado-livre-hover.png" class="img-hover">
+                        <img src="./img/mercado-livre.png" class="img-default" alt="Mercado Livre">
+                        <img src="./img/mercado-livre-hover.png" class="img-hover" alt="Mercado Livre">
                     </a>
-
                     <a href="#" class="icon-wrapper shopee">
-                        <img src="./img/shopee.png" class="img-default">
-                        <img src="./img/shopee-hover.png" class="img-hover">
+                        <img src="./img/shopee.png" class="img-default" alt="Shopee">
+                        <img src="./img/shopee-hover.png" class="img-hover" alt="Shopee">
                     </a>
-
-                    <!-- <a href="#" class="icon-wrapper ifood">
-                        <img src="./img/ifood.png" class="img-default">
-                        <img src="./img/ifood-hover.png" class="img-hover">
-                    </a> -->
                 </div>
-
             </div>
-
+            
+            <!-- Contato -->
             <div class="footer-col">
                 <h4>Contato</h4>
-
                 <div class="contact-item">
                     <i class="fi fi-br-phone-call"></i>
                     <p>(14) xxxxx - xxxx</p>
                 </div>
-
                 <div class="contact-item">
                     <i class="fi fi-br-envelope"></i>
                     <p>contato.cafedubai@gmail.com</p>
                 </div>
             </div>
-
+            
+            <!-- Redes Sociais -->
             <div class="footer-col">
                 <h4>Redes Sociais</h4>
-
                 <div class="footer-icons">
                     <a href="#"><i class="fi fi-brands-whatsapp"></i></a>
-                    <a href="https://www.instagram.com/cafe.digital_ofc?igsh=MWxzZGpjazNsY2I0ag=="><i
-                            class="fi fi-brands-instagram"></i></a>
+                    <a href="https://www.instagram.com/cafe.digital_ofc?igsh=MWxzZGpjazNsY2I0ag=="><i class="fi fi-brands-instagram"></i></a>
                 </div>
             </div>
-
         </div>
-
+        
+        <!-- Footer Bottom -->
         <div class="footer-bottom">
             <img src="./img/logo.png" alt="Logo Café Dubai" class="footer-logo">
             <p>&copy; 2025 Café Dubai — Todos os direitos reservados.</p>
         </div>
     </footer>
 
+    <!-- MODAIS (FORA DO FOOTER) -->
     <div id="overlay"></div>
-
+    
+    <!-- Modal Carrinho -->
     <div id="cartModal" class="cart-modal">
-        <h2>Carrinho</h2>
-        <button id="closeCart" class="close-btn">X</button>
-
-        <ul id="cartList" class="cart-list"></ul>
-
-        <button id="checkoutBtn" class="checkout-btn disabled">Finalizar Compra</button>
-
-        <!-- Modal - Dados do Cliente -->
-        <div id="checkoutModal" class="client-modal">
-            <div class="client-modal-content">
-                <span class="close-client">&times;</span>
-                <h2>Dados para Nota Fiscal</h2>
-
-                <form id="clientDataForm">
-                    <label for="nomeCompleto">Nome Completo</label>
-                    <input type="text" id="nomeCompleto" required>
-
-                    <label for="cpf">CPF</label>
-                    <input type="text" id="cpf" required>
-
-                    <label for="endereco">Endereço Completo</label>
-                    <input type="text" id="endereco" required>
-
-                    <label for="celular">Número de Celular</label>
-                    <input type="text" id="celular" required>
-
-                    <label for="email">E-mail</label>
-                    <input type="email" id="email" required>
-
-                    <button type="submit" class="send-data">Enviar Dados</button>
-                </form>
-            </div>
+        <div class="cart-header">
+            <h2>Carrinho</h2>
+            <button id="closeCart" class="close-btn">X</button>
         </div>
-
-
-        <p id="cartTotal">Total: R$ 0,00</p>
+        
+        <ul id="cartList" class="cart-list">
+            <!-- Itens do carrinho serão inseridos aqui via JavaScript -->
+        </ul>
+        
+        <div class="cart-summary">
+            <p id="cartTotal">Total: R$ 0,00</p>
+            <button id="checkoutBtn" class="checkout-btn disabled">Finalizar Compra</button>
+        </div>
     </div>
-
+    
+    <!-- Modal Checkout -->
+    <div id="checkoutModal" class="client-modal">
+        <div class="client-modal-content">
+            <span class="close-client">&times;</span>
+            <h2>Dados para Nota Fiscal</h2>
+            <form id="clientDataForm">
+                <label for="nomeCompleto">Nome Completo</label>
+                <input type="text" id="nomeCompleto" required>
+                
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" required>
+                
+                <label for="endereco">Endereço Completo</label>
+                <input type="text" id="endereco" required>
+                
+                <label for="celular">Número de Celular</label>
+                <input type="text" id="celular" required>
+                
+                <label for="email">E-mail</label>
+                <input type="email" id="email" required>
+                
+                <button type="submit" class="send-data">Enviar Dados</button>
+            </form>
+        </div>
+    </div>
 
     <script src="./js/script.js"></script>
 </body>
-
-
 </html>
