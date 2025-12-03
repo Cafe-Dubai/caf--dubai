@@ -12,22 +12,25 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&family=Noto+Serif+KR:wght@200..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prata&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap" rel="stylesheet">
     <title>Café Dubai</title>
+
+
 </head>
 
 <body>
     <!-- HEADER -->
     <header>
         <div class="header-container">
+            <!-- Menu Hambúrguer - PRIMEIRO (esquerda) -->
             <button class="menu-toggle" aria-label="Abrir menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <i class="fi fi-br-menu-burger"></i>
             </button>
-            
+
+            <!-- Logo - SEGUNDO (centro) -->
             <a href="#" class="logo">
-                <img src="./img/logo.png" alt="logo Café Dubai">
+                <img src="./img/logo.png" alt="logo">
             </a>
-            
+
+            <!-- Navbar - TERCEIRO -->
             <nav class="navbar">
                 <a href="#home">Home</a>
                 <a href="#sobre">Sobre</a>
@@ -35,6 +38,7 @@
                 <a href="#localizacao">Localização</a>
             </nav>
 
+            <!-- Ícones - QUARTO (direita) -->
             <div class="icons">
                 <i class="fi fi-bs-search" id="openSearch"></i>
                 <i class="fi fi-br-shopping-cart" id="cartIcon"></i>
@@ -48,6 +52,8 @@
             
             <div class="menu-overlay"></div>
         </div>
+
+        <div class="menu-overlay"></div>
     </header>
 
     <!-- HOME -->
@@ -149,7 +155,7 @@
                 <h4>Contato</h4>
                 <div class="contact-item">
                     <i class="fi fi-br-phone-call"></i>
-                    <p>(14) xxxxx - xxxx</p>
+                    <p>(14) 99788 - 0175</p>
                 </div>
                 <div class="contact-item">
                     <i class="fi fi-br-envelope"></i>
@@ -161,8 +167,11 @@
             <div class="footer-col">
                 <h4>Redes Sociais</h4>
                 <div class="footer-icons">
-                    <a href="#"><i class="fi fi-brands-whatsapp"></i></a>
-                    <a href="https://www.instagram.com/cafe.digital_ofc?igsh=MWxzZGpjazNsY2I0ag=="><i class="fi fi-brands-instagram"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=5514997880175&text=Ol%C3%A1%21+Fiquei+interessado+no+Caf%C3%A9+Dubai&type=phone_number&app_absent=0"><i class="fi fi-brands-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/dubai.cafe_ofc/"><i class="fi fi-brands-instagram"></i></a>
+                    <a
+                        href="https://www.tiktok.com/@cafedigital_ofc?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnfLYAydGv3FJPD250nJgt1BJNWRg3UFXfDQd72ELLqtGG8nVxUgjEAeSuhtE_aem_VBIvGps9Q-iORufevXNwgQ"><i
+                            class="fi fi-brands-tik-tok"></i></a>
                 </div>
             </div>
         </div>
@@ -179,45 +188,85 @@
     
     <!-- Modal Carrinho -->
     <div id="cartModal" class="cart-modal">
-        <div class="cart-header">
-            <h2>Carrinho</h2>
-            <button id="closeCart" class="close-btn">X</button>
+        <h2>Carrinho</h2>
+        <button id="closeCart" class="close-btn">X</button>
+
+        <ul id="cartList" class="cart-list"></ul>
+
+        <button id="checkoutBtn" class="checkout-btn disabled">Finalizar Compra</button>
+
+        <!-- Modal - Dados do Cliente -->
+        <div id="checkoutModal" class="client-modal">
+            <div class="client-modal-content">
+                <span class="close-client">&times;</span>
+                <h2>Dados para Nota Fiscal</h2>
+
+                <form id="clientDataForm">
+
+                    <label>Nome Completo</label>
+                    <input type="text" id="nomeCompleto" required>
+
+                    <label>CPF</label>
+                    <input type="text" id="cpf" required>
+
+                    <label>Celular</label>
+                    <input type="text" id="celular" required>
+
+                    <label>CEP</label>
+                    <input type="text" id="cep" maxlength="9" required>
+
+                    <label>Endereço</label>
+                    <input type="text" id="endereco" required>
+
+                    <label>Número</label>
+                    <input type="text" id="numero" required>
+
+                    <label>Bairro</label>
+                    <input type="text" id="bairro" required>
+
+                    <label>Cidade</label>
+                    <input type="text" id="cidade" required>
+
+                    <label>Estado</label>
+                    <select id="estado" required>
+                        <option value="">Selecione</option>
+                        <option value="AC">AC</option>
+                        <option value="AL">AL</option>
+                        <option value="AP">AP</option>
+                        <option value="AM">AM</option>
+                        <option value="BA">BA</option>
+                        <option value="CE">CE</option>
+                        <option value="DF">DF</option>
+                        <option value="ES">ES</option>
+                        <option value="GO">GO</option>
+                        <option value="MA">MA</option>
+                        <option value="MT">MT</option>
+                        <option value="MS">MS</option>
+                        <option value="MG">MG</option>
+                        <option value="PA">PA</option>
+                        <option value="PB">PB</option>
+                        <option value="PR">PR</option>
+                        <option value="PE">PE</option>
+                        <option value="PI">PI</option>
+                        <option value="RJ">RJ</option>
+                        <option value="RN">RN</option>
+                        <option value="RS">RS</option>
+                        <option value="RO">RO</option>
+                        <option value="RR">RR</option>
+                        <option value="SC">SC</option>
+                        <option value="SP">SP</option>
+                        <option value="SE">SE</option>
+                        <option value="TO">TO</option>
+                    </select>
+
+                    <button type="button" class="send-data" onclick="whatsappApi()">Enviar Dados</button>
+                </form>
+            </div>
         </div>
-        
-        <ul id="cartList" class="cart-list">
-            <!-- Itens do carrinho serão inseridos aqui via JavaScript -->
-        </ul>
-        
-        <div class="cart-summary">
-            <p id="cartTotal">Total: R$ 0,00</p>
-            <button id="checkoutBtn" class="checkout-btn disabled">Finalizar Compra</button>
-        </div>
-    </div>
-    
-    <!-- Modal Checkout -->
-    <div id="checkoutModal" class="client-modal">
-        <div class="client-modal-content">
-            <span class="close-client">&times;</span>
-            <h2>Dados para Nota Fiscal</h2>
-            <form id="clientDataForm">
-                <label for="nomeCompleto">Nome Completo</label>
-                <input type="text" id="nomeCompleto" required>
-                
-                <label for="cpf">CPF</label>
-                <input type="text" id="cpf" required>
-                
-                <label for="endereco">Endereço Completo</label>
-                <input type="text" id="endereco" required>
-                
-                <label for="celular">Número de Celular</label>
-                <input type="text" id="celular" required>
-                
-                <label for="email">E-mail</label>
-                <input type="email" id="email" required>
-                
-                <button type="submit" class="send-data">Enviar Dados</button>
-            </form>
-        </div>
+
+
+
+        <p id="cartTotal">Total: R$ 0,00</p>
     </div>
 
     <script src="./js/script.js"></script>

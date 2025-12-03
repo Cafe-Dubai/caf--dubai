@@ -1,3 +1,6 @@
+// ===============================
+// ABRIR E FECHAR BARRA DE PESQUISA
+// ===============================
 const openSearch = document.getElementById("openSearch");
 const searchBar = document.getElementById("searchBar");
 const closeSearch = document.getElementById("closeSearch");
@@ -21,10 +24,13 @@ if (openSearch && searchBar && closeSearch) {
     });
 }
 
-document.querySelectorAll(".menu-card").forEach(card => {
-    const minusBtn = card.querySelector(".minus");
-    const plusBtn = card.querySelector(".plus");
-    const qtyInput = card.querySelector(".qty-input");
+// ===============================
+// BOTÕES DE SOMAR E SUBTRAIR PRODUTO
+// ===============================
+document.querySelectorAll(".menu-card").forEach((card) => {
+  const minusBtn = card.querySelector(".minus");
+  const plusBtn = card.querySelector(".plus");
+  const qtyInput = card.querySelector(".qty-input");
 
     if (minusBtn && plusBtn && qtyInput) {
         minusBtn.onclick = () => {
@@ -49,14 +55,30 @@ const cartList = document.getElementById("cartList");
 const cartTotal = document.getElementById("cartTotal");
 const checkoutBtn = document.getElementById("checkoutBtn");
 
-if (cartIcon && cartModal) {
-    cartIcon.addEventListener("click", () => {
-        cartModal.classList.add("active");
-        if (overlay) overlay.classList.add("active");
-        document.body.style.overflow = 'hidden';
-    });
-}
+// if (cartIcon && cartModal) {
+    // cartIcon.addEventListener("click", () => {
+        // cartModal.classList.add("active");
+        // if (overlay) overlay.classList.add("active");
+        // document.body.style.overflow = 'hidden';
+    // });
+    //esse de cima é meu codigo testar depois 
 
+    // Abre o modal do carrinho
+cartIcon.addEventListener("click", () => {
+  cartModal.classList.add("active");
+  overlay.classList.add("active");
+});
+
+// Fecha cart modal e overlay
+closeCart.addEventListener("click", closeCartModal);
+overlay.addEventListener("click", closeCartModal);
+
+// Função que fecha o carrinho
+function closeCartModal() {
+  cartModal.classList.remove("active");
+  overlay.classList.remove("active");
+}
+//acaba aqui o de cima
 function closeCartModal() {
     if (cartModal) cartModal.classList.remove("active");
     if (overlay) overlay.classList.remove("active");
@@ -71,8 +93,11 @@ if (overlay) {
     overlay.addEventListener("click", closeCartModal);
 }
 
-document.querySelectorAll(".menu-card").forEach(card => {
-    const addToCartBtn = card.querySelector(".add-to-cart");
+// ===============================
+// ADICIONAR PRODUTO AO CARRINHO
+// ===============================
+document.querySelectorAll(".menu-card").forEach((card) => {
+  const addToCartBtn = card.querySelector(".add-to-cart");
 
     if (addToCartBtn) {
         addToCartBtn.addEventListener("click", () => {
@@ -165,7 +190,7 @@ function updateCart() {
         cartTotal.innerText = "Total: R$ " + total.toFixed(2).replace(".", ",");
     }
 
-    updateCheckoutButton();
+  updateCheckoutButton();
 }
 
 function updateCheckoutButton() {
@@ -324,9 +349,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             });
         }
     });
-});
-
-updateCart();
+}
+);
 
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
@@ -352,3 +376,79 @@ window.addEventListener('resize', () => {
 });
 
 console.log('Café Dubai - Sistema de pedidos carregado! 🚀');
+// --- ATIVA AUTOMATICAMENTE QUANDO O MODAL ABRIR --- //
+
+document.addEventListener("DOMContentLoaded", () => {
+    const checkoutBtn = document.getElementById("checkoutBtn");
+    const checkoutModal = document.getElementById("checkoutModal");
+
+    if (checkoutBtn && checkoutModal) {
+        checkoutBtn.addEventListener("click", () => {
+            checkoutModal.classList.add("show");
+            setTimeout(() => enableCepAutoComplete(), 200);
+        });
+    }
+
+    const closeClient = document.querySelector(".close-client");
+    if (closeClient) {
+        closeClient.addEventListener("click", () => {
+            checkoutModal.classList.remove("show");
+        });
+    }
+});
+
+
+
+// ===============================
+// FUNÇÃO PARA API DO WHATSAPP (FINALIZAR PEDIDO)
+// ===============================
+function whatsappApi() {
+    const form = document.getElementById('clientDataForm');
+
+    // 1. Validação Manual (pois mudamos o botão para type="button")
+    if (!form.checkValidity()) {
+        form.reportValidity(); // Mostra os alertas padrão do navegador
+        return; // Para a execução se inválido
+    }
+
+    // 2. Coletar dados do Formulário
+    const nome = document.getElementById('nomeCompleto').value;
+    const cpf = document.getElementById('cpf').value;
+    const celular = document.getElementById('celular').value;
+    const cep = document.getElementById('cep').value;
+    const endereco = document.getElementById('endereco').value;
+    const numero = document.getElementById('numero').value;
+    const bairro = document.getElementById('bairro').value;
+    const cidade = document.getElementById('cidade').value;
+    const estado = document.getElementById('estado').value;
+
+    // 3. Montar a Mensagem
+    let message = "Olá! Gostaria de finalizar aqui o pedido que fiz pelo site do Café Dubai!\n\n";
+
+    message += "*Segue as informações cadastradas:*\n";
+    // Loop pelos itens do carrinho (variável global 'cart')
+    cart.forEach(item => {
+        // Ex: - Café Dubai ouro (2x) - R$ 120,00
+        message += `- ${item.name} (${item.qty}x) - R$ ${(item.price * item.qty).toFixed(2).replace('.', ',')}\n`;
+    });
+
+    message += "\n*Dados para envio:*\n";
+    message += `- Nome: ${nome}\n`;
+    message += `- CPF: ${cpf}\n`;
+    message += `- Celular: ${celular}\n`;
+    message += `- CEP: ${cep}\n`;
+    message += `- Endereço: ${endereco}, ${numero}\n`;
+    message += `- Bairro: ${bairro}\n`;
+    message += `- Cidade: ${cidade} - ${estado}\n`;
+
+    // 4. Codificar a mensagem para URL
+    const phoneNumber = "5514997880175";
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    // 5. Ações Finais
+    // Abre o WhatsApp numa nova aba
+    window.open(url, '_blank');
+
+    // Redireciona a página atual para obrigado.html
+    window.location.href = "obrigado.html";
+}
