@@ -54,7 +54,7 @@ header section {
 }
 
 .logo img {
-    width: 70px;
+    width: 100px;
     height: auto;
 }
 
@@ -511,7 +511,7 @@ footer {
 }
 
 .footer-logo {
-    width: 50px;
+    width: 70px;
     opacity: 0.9;
 }
 
